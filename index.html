@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Atendimento</title>		
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.min.js"></script>	
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#email").mask("A", {
+				translation: {
+					"A": { pattern: /[\w@\-.+]/, recursive: true }
+				}
+			});
+						
+			$("#celular").mask("(00) 0000-00009")
+			
+			$("#celular").blur(function(event){
+				if ($(this).val().length == 15){
+					$("#celular").mask("(00) 00000-0009")
+				}else{
+					$("#celular").mask("(00) 0000-00009")
+				}
+			})
+		})
+		</script>
+	</head>
+	<body>
+		<h1>JQuery Mask Plugin</h1>
+		<form name="form" method="post">
+			<label>Nome Completo</label>
+				<input type="text" name="name" id="name" placeholder="Nome completo">
+			<label>Email</label>
+				<input type="text" name="email" id="email" placeholder="email@email.com">
+			<label>Telefone</label>
+				<input type="text" name="celular" id="celular" />
+			<br />
+			<input type="submit" name="enviar" value="Enviar" />
+		</form>
+		
+	</body>
+</html>
