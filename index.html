@@ -5,17 +5,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Atendimento</title>		
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet">
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mask.min.js"></script>	
+		<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/additional-methods.min.js"></script>
+		<script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
+		
 		<script type="text/javascript">
-		$(document).ready(function(){
-			$("#email").mask("A", {
-				translation: {
-					"A": { pattern: /[\w@\-.+]/, recursive: true }
-				}
-			});
+
+								
+			$(document).ready(function(){
+				
+				$("#formCadastro").validate({
+					rules:{
+						nome: {
+							required: true,
+							maxlength: 100,
+							minlength: 10,
+							minWords: 2
+						},
+						email: {
+							required: true,
+							email: true
+						},
 						
+					},
+					submitHandler: function(form){
+						alert("Sucessoooooooooo")						
+					}
+				})
+				
 			$("#celular").mask("(00) 0000-00009")
 			
 			$("#celular").blur(function(event){
@@ -25,21 +46,67 @@
 					$("#celular").mask("(00) 0000-00009")
 				}
 			})
+				
 		})
 		</script>
 	</head>
 	<body>
-		<h1>JQuery Mask Plugin</h1>
-		<form name="form" method="post">
-			<label>Nome Completo</label>
-				<input type="text" name="name" id="name" placeholder="Nome completo">
-			<label>Email</label>
-				<input type="text" name="email" id="email" placeholder="email@email.com">
-			<label>Telefone</label>
-				<input type="text" name="celular" id="celular" />
-			<br />
-			<input type="submit" name="enviar" value="Enviar" />
-		</form>
-		
+		<div class="container">
+			<h4>Por favor, preencha o formulário para abrir um novo chamado.</h4>
+			<div id="linha"></div>
+			<br>
+			<form name="formCadastro" id="formCadastro" method="post">
+				<div class="row">
+					<div class="col-sm">
+					<label>Nome</label>
+					<input type="text" name="nome" id="nome" class="form-control" />
+					</div>
+
+					<div class="col-sm">
+					<label>E-mail</label>
+					<input type="email" name="email" id="email" class="form-control" />
+					</div>
+				</div>
+					
+					<div id="telefone" class="row">
+					<label>Telefone</label>
+					<input type="text" name="celular" id="celular" class="form-control" />
+					</div>
+
+				<br>
+					<div id="linha"></div>
+				<br>
+					<div class="row">
+    				<div class="col-sm">
+    					 <label for="help">Tópico de ajuda:</label>
+
+							<select name="help" id="help">
+  							<option value="sifap">SIFAP</option>
+  							<option value="aluno">Evirtual Aluno</option>
+  							<option value="formacao">Evirtual Formação</option>
+  							<option value="ecidade">Ecidade</option>
+						</select> 
+    				</div>
+    				<div class="col-sm">
+    					 <label for="question">Assunto:</label>
+
+							<select name="question" id="question">
+  							<option value="pass">Problemas de acesso</option>
+  							<option value="login">Cadastro</option>
+  							<option value="others">Outros</option>
+  							</select> 
+    				</div>
+    			</div>	
+    			<br>
+					<div>
+        			<label for="msg">Mensagem:</label>
+       				 <textarea id="msg" name="usuario_msg"></textarea>
+    				</div>
+    			<br>
+    				<div class="row">
+					<input type="submit" name="enviar" id="enviar" class="btn btn-primary form-control" />
+					</div>
+			</form>
+		</div>
 	</body>
 </html>
