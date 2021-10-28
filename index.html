@@ -36,7 +36,11 @@
 						alert("Sucessoooooooooo")						
 					}
 				})
+
 				
+
+				//Máscara não está funcionando quando aplicado o validate
+
 			$("#celular").mask("(00) 0000-00009")
 			
 			$("#celular").blur(function(event){
@@ -51,10 +55,15 @@
 		</script>
 	</head>
 	<body>
+
 		<div class="container">
 			<h4>Por favor, preencha o formulário para abrir um novo chamado.</h4>
 			<div id="linha"></div>
 			<br>
+
+		<div class="container" align="center">
+			<h1>Bem vindo ao atendimento</h1>
+
 			<form name="formCadastro" id="formCadastro" method="post">
 				<div class="row">
 					<div class="col-sm">
@@ -68,6 +77,7 @@
 					</div>
 				</div>
 					
+
 					<div id="telefone" class="row">
 					<label>Telefone</label>
 					<input type="text" name="celular" id="celular" class="form-control" />
@@ -104,6 +114,14 @@
     				</div>
     			<br>
     				<div class="row">
+
+					<div class="row">
+					<label>Telefone</label>
+					<input type="text" name="celular" id="celular" class="form-control" />
+					</div>
+				<br>
+					<div class="row">
+
 					<input type="submit" name="enviar" id="enviar" class="btn btn-primary form-control" />
 					</div>
 			</form>
