@@ -13,18 +13,25 @@ input, textarea {
 
 textarea {
     /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
-    vertical-align: top;
+    vertical-align: left;
 
     /* Para dar espaço suficiente para digitar algum texto */
-    height: 5em;
+    height: 10em;
 
     /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
     resize: vertical;
 }
 #linha {
-    width: 600px;
+    width: 500px;
     border: 1px solid #0A5A78;
 }
-#telefone {
-    width: 200px;
+
+label {
+display: block;
+}
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+
 }
