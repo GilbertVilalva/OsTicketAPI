@@ -3,7 +3,7 @@
     border: 1px solid #0A5A78;
 }
 
-input[type=text], select, textarea{
+input[type=textarea], select, textarea{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -65,3 +65,8 @@ input[type=submit] {
     margin-top: 0;
   }
 } 
+
+.error{
+             color:red
+       }
+

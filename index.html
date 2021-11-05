@@ -39,7 +39,11 @@
 							required: true,
 							email: true
 						},
-						
+						celular: {
+							required: true,
+							minlength: 14
+						}
+												
 					},
 					submitHandler: function(form){
 						alert("Sucessoooooooooo")						
@@ -88,7 +92,9 @@
 
                     <div class="col-75">	
                     <input type="email" name="email" id="email" class="form-control" placeholder="email@exemplo.com" />
+
                     </div>
+
                 </div>  
 
                 <div class="row">  
