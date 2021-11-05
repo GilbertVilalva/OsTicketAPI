@@ -46,7 +46,7 @@
 												
 					},
 					submitHandler: function(form){
-						alert("Sucessoooooooooo")						
+						$(formCadastro).submit();						
 					}
 				})
 			$("#celular").mask("(00) 0000-00009")
@@ -71,7 +71,7 @@
         		</h5>
             <div class='card card-body'>
             
-            <form class="form-group" name="formCadastro" id="formCadastro" method="post">
+            <form class="form-group" name="formCadastro" id="formCadastro" method="POST" action="php/send.php">
                 
                 <div class="row">
 

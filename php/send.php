@@ -1,5 +1,6 @@
 <?php
  
+ print_r ($_POST);
 #
  
 # Configuration: Enter the url and key. That is it.
@@ -71,9 +72,9 @@ $data = array(
  
   'priority'  => 'false',
   'alert'     => 'true',
-  'name'      => 'Indian 4',  // from name aka User/Client Name
-  'email'     => 'indian4@gmail.com',  // from email aka User/Client Email
-  'phone'     => '1234567890',  // phone number aka User/Client Phone Number
+  'name'      => $_POST['nome'],  // from name aka User/Client Name
+  'email'     => $_POST['email'],  // from email aka User/Client Email
+  'phone'     => $_POST['celular'],  // phone number aka User/Client Phone Number
   'subject'   => 'Test API message',  // test subject, aka Issue Summary
   'message'   => 'This is a test of the osTicket API',  // test ticket body, aka Issue Details.
   'ip'        => $_SERVER['REMOTE_ADDR'], // Should be IP address of the machine thats trying to open the ticket.
