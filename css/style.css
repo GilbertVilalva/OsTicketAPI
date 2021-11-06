@@ -6,16 +6,10 @@
 input[type=textarea], select, textarea{
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-}
-
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
 }
 
 
@@ -27,37 +21,83 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
-  
-
+  width: 100%;
 }
 
+label {
+  padding: 2px 0 0 0;
+  display: inline-block;
+}
+
+.card{
+
+  max-width: 500px;
+}
 
 .container {
+  max-width: 500px;
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 10px;
 }
 
 .col-25 {
   float: left;
-  width: 25%;
+  width: 100%;
   margin-top: 6px;
 }
 
 
 .col-75 {
   float: left;
-  width: 75%;
-  margin-top: 6px;
+  width: 100%;
+  
 }
 
+.error{
+             color:red
+       }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    border: 1px dashed rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    transition: 0.2s
 }
 
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase
+}
+
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0
+}
 
 @media screen and (max-width: 500px) {
   .col-25, .col-75, input[type=submit] {
@@ -65,8 +105,3 @@ input[type=submit] {
     margin-top: 0;
   }
 } 
-
-.error{
-             color:red
-       }
-

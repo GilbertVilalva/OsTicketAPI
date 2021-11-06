@@ -1,6 +1,6 @@
 <?php
  
- print_r ($_POST);
+ var_dump($_POST);
 #
  
 # Configuration: Enter the url and key. That is it.

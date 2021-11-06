@@ -6,7 +6,7 @@
 		<title>Atendimento</title>		
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet">
-		 <link href="/cdn/Vendor/limitless/2.3/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+		<link href="/cdn/Vendor/limitless/2.3/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
         <link href="/cdn/Vendor/limitless/2.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,6 +24,20 @@
 		
 		<script type="text/javascript">
 
+			$(document).on('change', '.file-input', function() {
+
+
+				var filesCount = $(this)[0].files.length;
+
+				var textbox = $(this).prev();
+
+				if (filesCount === 1) {
+				var fileName = $(this).val().split('\\').pop();
+				textbox.text(fileName);
+				} else {
+				textbox.text(filesCount + ' files selected');
+				}
+				});
 								
 			$(document).ready(function(){
 				
@@ -46,7 +60,7 @@
 												
 					},
 					submitHandler: function(form){
-						$(formCadastro).submit();						
+						$(form).submit();						
 					}
 				})
 			$("#celular").mask("(00) 0000-00009")
@@ -71,14 +85,16 @@
         		</h5>
             <div class='card card-body'>
             
-            <form class="form-group" name="formCadastro" id="formCadastro" method="POST" action="php/send.php">
+            <form class="form-group" name="formCadastro" id="formCadastro" method="POST" action="php/send2.php">
                 
                 <div class="row">
 
                     <div class="col-25">
                     	<label>Nome completo:</label>
                 	</div>
+                </div>
 
+                <div class="row">
                 	<div class="col-75">
                     	<input type="text" name="nome" id="nome" class="form-control" placeholder="Nome e Sobrenome" />
                 	</div>
@@ -89,6 +105,9 @@
                     <div class="col-25">
                     	<label>Email:</label>
                     </div>
+                </div>
+
+                <div class="row">
 
                     <div class="col-75">	
                     <input type="email" name="email" id="email" class="form-control" placeholder="email@exemplo.com" />
@@ -102,6 +121,9 @@
                     <div class="col-25">
                     	<label>Telefone:</label>
                     </div>
+                </div>
+
+                <div class="row">
 
                     <div class="col-75">
                    		<input type="text" name="celular" id="celular" class="form-control" placeholder="(xx) xxxxx-xxxx" />
@@ -112,11 +134,15 @@
                 <br>
                     <div class="col-75" id="linha"></div>
                 <br>
+                    
                     <div class="row">
                     
                     	<div class="col-25">
                          	<label for="help">Tópico de ajuda:</label>
                     	</div>
+                    </div>
+
+                    <div class="row">
 
                     	<div class="col-75">
                     	    <select name="hhelp" id="hhelp" class="selectpicker" data-live-search="true">
@@ -132,7 +158,10 @@
 
                     	<div class="col-25">
                         	<label for="question">Assunto:</label>
-                        </div>	
+                        </div>
+                    </div>
+
+                    <div class="row">	
 
                         <div class="col-75">
                             <select name="question" id="question" class="selectpicker" data-live-search="true">
@@ -149,14 +178,31 @@
                     	<div class="col-25">
                     		<label for="msg">Mensagem:</label>
                    		</div>
-                    
+                    </div>
+
+                    <div class="row">
                     	<div class="col-75">	
                     		<textarea id="msg" name="usuario_msg"></textarea>
                     	</div>
-                    </div>	
-                          
+                    </div>
+                    <br>
                     <div class="row">
-                    <input type="submit" id="enviar" value="Enviar" />
+					    	<div class="col-25">
+					    		<label>Anexar arquivos:</label>
+					    	</div>
+                    </div>
+
+                    <div class="row">
+					    
+					    	<div class="col-75">
+					            <div class="file-drop-area"> <span class="choose-file-button">Selecione o arquivo</span> <span class="file-message">ou arraste e solte aqui!</span> <input class="file-input" type="file" multiple>
+					            </div>
+					        </div>
+					    </div>
+					
+                    <br>                          
+                    <div class="row">
+                    	<input type="submit" id="enviar" value="Enviar" />
                     </div>
             </form>
             </div>
