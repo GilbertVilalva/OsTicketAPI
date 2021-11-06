@@ -31,24 +31,24 @@ label {
 
 .card{
 
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .container {
-  max-width: 500px;
+  max-width: 700px;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
 }
 
-.col-25 {
+.col-50{
   float: left;
-  width: 100%;
+  width: 50%;
   margin-top: 6px;
 }
 
 
-.col-75 {
+.col-100 {
   float: left;
   width: 100%;
   
@@ -100,7 +100,7 @@ label {
 }
 
 @media screen and (max-width: 500px) {
-  .col-25, .col-75, input[type=submit] {
+  .col-50, .col-100, input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
