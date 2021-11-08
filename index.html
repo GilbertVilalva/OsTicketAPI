@@ -30,117 +30,69 @@
                 
                 <div class="row">
 
-                    <div class="col-100">
+                    <div class="col-md-12">
                     	<label>Nome completo:</label>
+						<input type="text" name="nome" id="nome" class="form-control" placeholder="Nome e Sobrenome" />
                 	</div>
                 </div>
-
-                <div class="row">
-                	<div class="col-100">
-                    	<input type="text" name="nome" id="nome" class="form-control" placeholder="Nome e Sobrenome" />
-                	</div>
-                </div>
-                
+                         
                 <div class="row">
 
-                    <div class="col-50">
+                    <div class="col-md-9">
                     	<label>Email:</label>
+						<input type="email" name="email" id="email" class="form-control" placeholder="email@exemplo.com" />
                     </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-50">	
-                    <input type="email" name="email" id="email" class="form-control" placeholder="email@exemplo.com" />
-
-                    </div>
-
-                </div>  
-
-                <div class="row">  
-
-                    <div class="col-50">
+					<div class="col-md-3">
                     	<label>Telefone:</label>
+						<input type="text" name="celular" id="celular" class="form-control" placeholder="(xx) xxxxx-xxxx" />
                     </div>
                 </div>
-
-                <div class="row">
-
-                    <div class="col-50">
-                   		<input type="text" name="celular" id="celular" class="form-control" placeholder="(xx) xxxxx-xxxx" />
-                    </div>
-                </div>
-                
-
+      
                 <br>
-                    <div class="col-100" id="linha"></div>
+                    <div class="col-md-12" id="linha"></div>
                 <br>
                     
                     <div class="row">
                     
-                    	<div class="col-50">
+                    	<div class="col-md-6">
                          	<label for="help">Tópico de ajuda:</label>
+							<select name="hhelp" id="hhelp" class="selectpicker" data-live-search="false">
+								<option value="sifap">SIFAP</option>
+								<option value="aluno">Evirtual Aluno</option>
+								<option value="formacao">Evirtual Formação</option>
+								<option value="ecidade">Ecidade</option>
+							</select>
                     	</div>
-                    </div>
-
-                    <div class="row">
-
-                    	<div class="col-50">
-                    	    <select name="hhelp" id="hhelp" class="selectpicker" data-live-search="false">
-                            <option value="sifap">SIFAP</option>
-                            <option value="aluno">Evirtual Aluno</option>
-                            <option value="formacao">Evirtual Formação</option>
-                            <option value="ecidade">Ecidade</option>
-                        	</select>
-                    	</div>
-                    </div>
-                    
-                   <div class="row">
-
-                    	<div class="col-50">
+						<div class="col-md-6">
                         	<label for="question">Assunto:</label>
+							<select name="question" id="question" class="selectpicker" data-live-search="false">
+								<option value="pass">Ajuda 1</option>
+								<option value="login">Ajuda 2</option>
+								<option value="others">Ajuda 3</option>
+							</select>
                         </div>
+
                     </div>
 
-                    <div class="row">	
-
-                        <div class="col-50">
-                            <select name="question" id="question" class="selectpicker" data-live-search="false">
-                            <option value="pass">Problemas de acesso</option>
-                            <option value="login">Cadastro</option>
-                            <option value="others">Outros</option>
-                            </select>
-                        </div>    
-                    </div>
-
-                <br>
+                                 
+                    <br>
 
                 	<div class="row">
-                    	<div class="col-100">
+                    	<div class="col-md-12">
                     		<label for="msg">Mensagem:</label>
+							<textarea id="msg" name="usuario_msg"></textarea>
                    		</div>
                     </div>
 
-                    <div class="row">
-                    	<div class="col-100">	
-                    		<textarea id="msg" name="usuario_msg"></textarea>
-                    	</div>
-                    </div>
+                    
                     <br>
                     <div class="row">
-					    	<div class="col-100">
+					    	<div class="col-md-12">
 					    		<label>Anexar arquivos:</label>
+								<div class="file-drop-area"> <span class="choose-file-button">Selecione o arquivo</span> <span class="file-message">ou arraste e solte aqui!</span> <input class="file-input" type="file" multiple></div>
 					    	</div>
                     </div>
-
-                    <div class="row">
-					    
-					    	<div class="col-100">
-					            <div class="file-drop-area"> <span class="choose-file-button">Selecione o arquivo</span> <span class="file-message">ou arraste e solte aqui!</span> <input class="file-input" type="file" multiple>
-					            </div>
-					        </div>
-					    </div>
-					
+                    			
                     <br>                          
                     <div class="row">
                     	<input type="submit" id="enviar" value="Enviar" />

@@ -41,18 +41,6 @@ label {
   padding: 10px;
 }
 
-.col-50{
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-}
-
-
-.col-100 {
-  float: left;
-  width: 100%;
-  
-}
 
 .error{
              color:red
@@ -100,7 +88,7 @@ label {
 }
 
 @media screen and (max-width: 500px) {
-  .col-50, .col-100, input[type=submit] {
+   input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
