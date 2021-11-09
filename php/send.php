@@ -1,6 +1,5 @@
 <?php
  
- var_dump($_POST);
 #
  
 # Configuration: Enter the url and key. That is it.
@@ -72,9 +71,9 @@ $data = array(
  
   'priority'  => 'false',
   'alert'     => 'true',
-  'name'      => $_POST['nome'],  // from name aka User/Client Name
-  'email'     => $_POST['email'],  // from email aka User/Client Email
-  'phone'     => $_POST['celular'],  // phone number aka User/Client Phone Number
+  'name'      => 'GilTeste',  // from name aka User/Client Name
+  'email'     => 'gil@gil.com',  // from email aka User/Client Email
+  'phone'     => '22997601726', // phone number aka User/Client Phone Number
   'subject'   => 'Test API message',  // test subject, aka Issue Summary
   'message'   => 'This is a test of the osTicket API',  // test ticket body, aka Issue Details.
   'ip'        => $_SERVER['REMOTE_ADDR'], // Should be IP address of the machine thats trying to open the ticket.
@@ -83,45 +82,21 @@ $data = array(
   //'deptId'    => '7',
   'escolas'   => '11',
  
-'attachments' => array(
+/*'attachments' => array(
 array('diario.jpg' => 'data:image/jpg;base64,'.base64_encode(file_get_contents("diario.jpg"))),
 array('wallpaper.jpg' => 'data:image/jpg;base64,'.base64_encode(file_get_contents("wallpaper_ubuntu1.jpg"))),
 array('comprovante.pdf' => 'data:application/pdf;base64,'.base64_encode(file_get_contents("comprovante.pdf"))),
 array(
  
-// BUGFIX: there was a semi-colon instead of comma after base64
- 
-//'file.txt' =>  (file_get_contents('file.txt')),
-//'file.txt' => (file_get_contents('file.txt')), 'type'=>'text/plain','encoding'=>'base64',
+
+
  
 'file.txt' => 'data:text/plain;base64,'.base64_encode(file_get_contents('file.txt'))
-//***'file.txt' => 'data:text/plain;charset=utf-8,'.file_get_contents('file.txt')
-//'diario.jpg' => 'data:image/jpg;base64,'.base64_encode(file_get_contents("wallpaper_ubuntu1.jpg")),
-/*
- 
-savedname.mp3 is the display name the file will have in the ticket
- 
-This example attaches a mp3 (voicemail) to the ticket but the method is the same
- 
-for other files just change the 'audio/mpeg' to another file type
- 
-'/path/to/attachment1.mp3' is the file path for the attachment
- 
-if you want to use a file from a stream or remote URL you can add a line in before declaring the $data array to do something like this
- 
-?php
- 
-file_put_contents('/path/to/attachment.mp3', fopen('http://www.example.com/file.mp3', 'r'));
- 
-?
- 
-it does require the /path/to/ directory to be chmod 777 (writable)
- 
-*/
+
  
 )
  
-));
+)*/ );
  
 #pre-checks
  

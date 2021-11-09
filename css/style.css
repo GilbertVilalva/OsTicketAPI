@@ -10,6 +10,7 @@ input[type=textarea], select, textarea{
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  rows: 10;
 }
 
 
